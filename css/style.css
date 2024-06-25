@@ -571,6 +571,29 @@ font-family: "DM Sans", sans-serif;
     transform: rotate(45deg);
 }
 
+/* FOOTER */
+
+.footer {
+    padding:50px 0;
+}
+
+.footer_items {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.footer_item {
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+
+.footer_item-link {
+    font-size: 16px;
+    color:#333333;
+}
+
 
 
 @media(max-width:1100px) {
@@ -777,6 +800,17 @@ font-family: "DM Sans", sans-serif;
 }
  }
 
+ @media(max-width:700px) {
+    .footer_items {
+        display: block;
+        justify-content: space-between;
+        align-items:center;
+    }
+    .footer_item-title {
+        margin-bottom: 20px;
+    }
+}
+
 
 @media(max-width:550px) {
     
@@ -956,6 +990,7 @@ font-family: "DM Sans", sans-serif;
 
 
 }
+
 
 @media(max-width:340px) {
     .stages_info-text {
