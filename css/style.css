@@ -52,6 +52,11 @@ body {
         transition: all 0.2s;
         position: fixed;
         z-index: 2;
+        -moz-user-select: -moz-none;
+        -o-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
     }
 
     /* .decoration_S1 {  
@@ -419,6 +424,8 @@ body {
 .problem {
     padding-top: 150px;
     padding: 100px 0 130px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .problem_title {
@@ -512,6 +519,7 @@ font-family: "DM Sans", sans-serif;
     display: none;
     max-width: 360px;
     margin: 0 auto;
+    height: 200px;
 }
 
 .slide.active {
@@ -599,6 +607,8 @@ font-family: "DM Sans", sans-serif;
 
 .advantages {
     padding: 100px 0 100px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .advantages_title {
@@ -821,7 +831,6 @@ font-family: "DM Sans", sans-serif;
     font-size: 18px;
     outline: none;
     cursor: pointer;
-    gap: 20px; 
 }
 
 .faq-icon {
@@ -878,6 +887,8 @@ font-family: "DM Sans", sans-serif;
     display: flex;
     justify-content: space-between;
     align-items:center;
+    position: relative;
+    z-index: 2;
 }
 
 .footer_item {
@@ -1165,7 +1176,7 @@ font-family: "DM Sans", sans-serif;
         height: 100vh;
         padding: 100px 0;  
         position: relative;
-        padding-bottom: 1000px
+        padding-bottom: 900px
     }
     .problem_item-title {
         margin-bottom: 20px;
@@ -1459,7 +1470,7 @@ font-family: "DM Sans", sans-serif;
     height: 100vh;
     padding: 100px 0;  
     position: relative;
-    padding-bottom: 950px
+    padding-bottom: 850px
 }
 
 .header {
