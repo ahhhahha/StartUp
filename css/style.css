@@ -519,7 +519,6 @@ font-family: "DM Sans", sans-serif;
     display: none;
     max-width: 360px;
     margin: 0 auto;
-    height: 200px;
 }
 
 .slide.active {
