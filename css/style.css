@@ -847,7 +847,7 @@ font-family: "DM Sans", sans-serif;
     opacity: 0; /* Начальное значение нулевой прозрачности */
     transition: max-height 0.3s ease, opacity 0.3s ease; /* Добавляем transition для плавного эффекта */
     margin-bottom: 0; /* Подходящее значение для отступа */
-    
+    padding: 0 20px 0 0; 
 }
 
 .faq-body.active {
