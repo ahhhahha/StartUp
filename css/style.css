@@ -195,6 +195,7 @@ body {
     height: 450px;
     background: #333;
     border-bottom-left-radius: 20px;
+    z-index: 3;
 }
 
 
@@ -208,7 +209,6 @@ body {
     margin-bottom: 100px;
     max-height: 30px;
     position: relative;
-    z-index: 2;
 }
 
 .menu_list {
@@ -217,6 +217,8 @@ body {
     gap:35px;
 }
 
+.header-logo {
+}
 
 .header-switcher {
     position: relative;
@@ -227,10 +229,9 @@ body {
     top: 45px;
     display: none;
     flex-direction: column;
-    gap: 10px;
     background: #fff;
     border-radius: 10px;
-    padding: 10px 10px;
+    overflow: hidden;
 }
 .header-switcher-body.active {
     display: flex;
@@ -240,6 +241,14 @@ body {
     justify-content: space-between;
     gap: 10px;
     cursor: pointer;
+    padding: 10px;
+    transition: all 0.5s;
+}
+.header-switcher-body__button:hover {
+    background: #e0e0e0;
+}
+.header-switcher-body__button:nth-child(2) {
+    padding: 5px 10px;
 }
 .header-switcher__button {
     display: flex;
@@ -250,10 +259,24 @@ body {
     cursor: pointer;
     width: 112px;
     justify-content: space-between;
+    transition: all 0.5s;
+}
+.header-switcher__button:hover {
+    background: #e0e0e0;
 }
 .header-switcher__text {
     font-family: "DM Sans", sans-serif;
     font-size: 16px;
+}
+.menu_list-item {
+    transition: all 0.5s;
+}
+.menu_list-item:hover {
+    color: #cccccc;
+    margin-top: -4px;
+}
+.menu_list-item:hover .menu_list-link{
+    color: #cccccc;
 }
 
 .menu_list-link {
@@ -295,7 +318,19 @@ body {
     border-radius: 50px;
     height: 64px;
     cursor: pointer;
-    
+    transition: all 0.5s;
+}
+.header_main-button:hover {
+    background: #e4e4e4;
+}
+.header_main-button:active {
+    height: 61px;
+}
+.header_main-btn-img {
+    transition: all 0.8s;
+}
+.header_main-button:hover .header_main-btn-img{
+    transform: rotate(360deg);
 }
 
 .header_main_btn-text {
@@ -339,7 +374,7 @@ body {
     right: 20px;
     cursor: pointer;
     
-    z-index: 2;
+    z-index: 4;
    }
 
    .menu-burger span {
@@ -660,6 +695,8 @@ font-family: "DM Sans", sans-serif;
 .contact {
     text-align: center;
     margin-bottom: 100px;
+    position: relative;
+    z-index: 2;
 }
 
 .contact_title {
@@ -681,6 +718,9 @@ font-family: "DM Sans", sans-serif;
     border: none; 
     border-bottom: 1px solid #333; 
 }
+.contact_input:focus {
+    border: none; 
+}
 
 .contact_input::placeholder {
     
@@ -698,15 +738,31 @@ font-family: "DM Sans", sans-serif;
     max-width: 155px;
     border-radius: 10px;
     border: none;
-    padding: 10px 40px;
+    padding: 15px 40px;
     position: relative;
     top:20px;
-    gap: 10px;
+    gap: 15px;
     cursor: pointer;
+    transition: all 0.5s;
+}
+.contact_main-btn-img {
+    margin: 3px 0 0 0;
 }
 
 .contact_main-button:active {
     border: none;
+}
+.contact_main-button:hover {
+    background: #1f1f1f;
+}
+.contact_main-button:active {
+    padding: 15px 40px 12px 40px;
+}
+.contact_main-btn-img {
+    transition: all 0.8s;
+}
+.contact_main-button:hover .contact_main-btn-img{
+    transform: rotate(360deg);
 }
 
 .contact_main_btn-text {
@@ -829,6 +885,14 @@ font-family: "DM Sans", sans-serif;
     justify-content: center;
     gap:20px;
 }
+.footer_item-list {
+    transition: all 0.5s;
+}
+.footer_item-list:hover {
+    margin-top: -4px;
+}
+.footer_item-list:hover .footer_item-link {
+}
 
 .footer_item-link {
     font-size: 16px;
@@ -848,6 +912,8 @@ font-family: "DM Sans", sans-serif;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -855,7 +921,7 @@ font-family: "DM Sans", sans-serif;
 .portfolio_item-img {
    border-radius:100%;
    margin-bottom: 20px;
-   transition: border-radius 1s ease;
+   transition: border-radius 0.5s;
 }
 
 .portfolio_item-img:hover {
@@ -864,7 +930,8 @@ font-family: "DM Sans", sans-serif;
 
 
 .portfolio_item-link {
-    transition: transform 1s ease;
+    transition: transform 0.8s ease;
+    max-height: 38px;
 
 }
 
@@ -918,7 +985,6 @@ font-family: "DM Sans", sans-serif;
     padding: 35px 0 40px 0; 
     max-height: 30px;
     position: relative;
-    z-index: 2;
 }
 
 .header_portfolio {
@@ -926,7 +992,6 @@ font-family: "DM Sans", sans-serif;
     position: relative;
     padding-bottom: 0px;
     margin-bottom: 100px;
-    border-bottom: 1px solid #fff;
 }
 
 
@@ -941,7 +1006,17 @@ font-family: "DM Sans", sans-serif;
 }
 
 
-
+@media(max-width: 1400px) {
+    .decoration_S3 {  
+        display: none;
+    }
+    .decoration_S4 {  
+        display: none;
+    }
+    .decoration_S5 {  
+        display: none;
+    }
+}
 
 @media(max-width:1160px) {
     .portfolio {
@@ -956,7 +1031,9 @@ font-family: "DM Sans", sans-serif;
         gap: 30px;
     }
     
-    
+    .decoration {
+        display: none;
+    }
 }
 
 
@@ -1224,6 +1301,10 @@ font-family: "DM Sans", sans-serif;
         display: block;
         top: 330px;
         right: 78px;
+        z-index: 4;
+    }
+    .menu_list-item:hover {
+        margin-top: 0px;
     }
     .problem_text {
         font-size: 24px;
@@ -1245,9 +1326,9 @@ font-family: "DM Sans", sans-serif;
     .menu_list {
         display: block;
         position: absolute;
-        right:  25px;
+        right: 10px;
         top: 190px;
-        z-index: 3;
+        z-index: 4;
         transform: translate(-50%, -50%);
     }
     .menu_list-item {
@@ -1459,7 +1540,7 @@ font-family: "DM Sans", sans-serif;
 
 @media(max-width:340px) {
     .header.active .header-switcher {
-        right: 105px;
+        right: 102px;
     }
     .stages_info-text {
         font-size: 12px;
@@ -1490,3 +1571,9 @@ font-family: "DM Sans", sans-serif;
    
   }
 
+.dot:hover {
+    background-color: #ccc;
+}
+.pagination .dot.active {
+    background-color: #ccc;
+}
