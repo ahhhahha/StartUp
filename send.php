@@ -1,33 +1,48 @@
 <?php
+// Подключаем файлы PHPMailer
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'set/src/Exception.php';
-require 'set/src/PHPMailer.php';
-require 'set/src/SMTP.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
-if(isset($_POST["send"])){
+    // Создаем экземпляр PHPMailer
     $mail = new PHPMailer(true);
 
-    $mail->isSMTP();
-    $mail->Host = 'smpt.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'samsungkh0901@gmail.com';
-    $mail->Password = 'dkbm uspy iasc oski';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port =465;
+    try {
+        // Настройки сервера
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';  // Укажите SMTP сервер
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'samsungkh0901@gmail.com'; // Ваш SMTP логин
+        $mail->Password   = 'fgyl hpoc xijr unvv';          // Ваш SMTP пароль
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port       = 465;
 
-    $mail->setFrom('');
-    $mail->addAddress($_POST["email"]);
-    $mail->isHTML(true);
-    $mail->Subject = $_POST["subject"];
-    $mail->Body = $_POST["message"];
-    $mail->send();
+        // От кого письмо
+        $mail->setFrom($email, $name);
 
-    echo "<script>
-    alert ('Sent Succesfully');
-    document.location.href = 'index.php';
-    </script.
-    ";
+        // Кому письмо
+        $mail->addAddress('samsungkh0901@gmail.com', 'JOpa'); // Ваш email и имя
+
+        // Тема письма
+        $mail->Subject = 'Новое сообщение с формы';
+
+        // Тело письма
+        $mail->Body    = 'Вы получили новое сообщение от ' . $name . ' (' . $email . '). Сообщение: ' . $message;
+
+        // Отправляем письмо
+        $mail->send();
+        echo 'Сообщение отправлено';
+    } catch (Exception $e) {
+        echo "Сообщение не может быть отправлено. Ошибка: {$mail->ErrorInfo}";
+    }
 }
 ?>
+
