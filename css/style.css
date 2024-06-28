@@ -830,6 +830,7 @@ font-family: "DM Sans", sans-serif;
     font-size: 18px;
     outline: none;
     cursor: pointer;
+    gap: 20px;
 }
 
 .faq-icon {
@@ -1175,7 +1176,7 @@ font-family: "DM Sans", sans-serif;
         height: 100vh;
         padding: 100px 0;  
         position: relative;
-        padding-bottom: 900px
+        padding-bottom: 1000px
     }
     .problem_item-title {
         margin-bottom: 20px;
@@ -1469,7 +1470,7 @@ font-family: "DM Sans", sans-serif;
     height: 100vh;
     padding: 100px 0;  
     position: relative;
-    padding-bottom: 850px
+    padding-bottom: 950px
 }
 
 .header {
